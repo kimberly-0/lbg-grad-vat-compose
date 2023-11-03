@@ -1,0 +1,22 @@
+version: "3.8"
+services:
+  calc-api:
+    image: kimberly0/lbg-grad-compose-api
+    build: ./calculator-api
+    ports:
+      - target: 8080
+        published: 8080
+  front-a:
+    image: kimberly0/lbg-grad-compose-front-a
+    build:
+      context: ./frontend-1
+    ports:
+      - target: 80
+        published: 80
+  front-b:
+    image: kimberly0/lbg-grad-compose-front-b
+    build:
+      context: ./frontend-2
+    ports:
+      - target: 80
+        published: 81
